@@ -17,12 +17,6 @@ interface RecordListProps {
 export default function RecordList({ records, onDelete }: RecordListProps) {
   return (
     <ul>
-      {/* {records.map(record => (
-                <li key={record.id}>
-                    {record.employee} : {record.entry_time} - {record.exit_time}
-                </li>
-            ))} */}
-
       {records.map((record) => (
         <li key={record.id} className="flex items-center space-x-4">
           <span>

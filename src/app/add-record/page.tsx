@@ -1,8 +1,20 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
+import { useRouter } from 'next/navigation';
 
 export default function AddRecords() {
+  const router = useRouter();
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        // console.log("Token kontrolü:", token);
+        if (!token) {
+            router.push('/logIn'); 
+        }
+        
+    }, [router]);
+    
   const [employee, setEmployee] = useState('');
   const [entry_time, setEntryTime] = useState('');
   const [exit_time, setExitTime] = useState('');

@@ -2,11 +2,22 @@
 import React, { useEffect, useState } from "react";
 import RecordList, { Record } from "@/components/RecordList";
 import Navbar from "@/components/Navbar";
+import { useRouter } from "next/navigation";
 
 const initialRecords: Record[] = [];
 
 export default function RecordsPage() {
   const [records, setRecords] = useState<Record[]>(initialRecords);
+  const router = useRouter();
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        // console.log("Token kontrolü:", token);
+        if (!token) {
+            router.push('/logIn'); 
+        }
+        
+    }, [router]);
 
   useEffect(() => {
     async function fetchRecords() {
