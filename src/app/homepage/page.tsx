@@ -37,11 +37,12 @@ export default function Homepage() {
   }, [router]);
 
   return (
-    <div>
+    <div className="bg-zinc-600 h-full" >
       <Navbar />
       <div className="flex justify-center items-center">
         <div className="p-5 m-10 w-5/12 rounded-xl border-solid border-4 border-white bg-zinc-300">
           <div className="p-5">
+            <h1 className="text-center text-zinc-600 font-bold text-2xl mb-8">EMPLOYEE LIST</h1>
             <EmployeeList employee={employee}></EmployeeList>
           </div>
         </div>

@@ -25,8 +25,8 @@ export default function Page() {
 
     return (
         <div>
-            <h1>Hoş Geldiniz</h1>
-            <p>Giriş yapmak için <a href="/logIn">buraya</a> tıklayın.</p>
+            <h1>WELCOME</h1>
+            <p>Click<a href="/logIn" className='underline'> here</a> to log in.</p>
         </div>
     );
 }

@@ -76,11 +76,11 @@ export default function EmployeeDetail({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div>
+    <div className="bg-zinc-600 h-full">
       <Navbar />
       <div className="flex justify-center items-center">
         <div className="p-8 m-10 w-5/12 rounded-xl border-solid border-4 border-white bg-zinc-300">
-        <h1 className="text-center text-2xl text-zinc-800">{employee.name} {employee.surname}</h1>
+        <h1 className="text-center text-zinc-600 font-bold text-2xl mb-4">{employee.name} {employee.surname}</h1>
           <div className="flex justify-normal p-5">
             <div>
             <h1 className="text-lg text-red-800 underline">General Info</h1>

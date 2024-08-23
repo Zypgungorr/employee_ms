@@ -33,58 +33,90 @@ export default function SignUpPage() {
         return;
       }
 
-      router.push("/add-record");
+      alert("You are registered! You can log in.");
+      router.push("/homepage");
     } catch (error) {
       setError("Bir hata oluştu, lütfen tekrar deneyin.");
     }
   };
 
   return (
-    <div className="flex justify-center items-center">
-      <div className="p-5 m-10 w-5/12 rounded-xl border-solid border-4 border-white bg-zinc-300">
+    <div className="flex justify-center items-center bg-zinc-800 h-full">
+      <div className="p-5 m-5 mt-10 w-4/12 rounded-xl border-solid border-4 border-white bg-zinc-300">
         <div className="p-10">
-          <h1>Sign Up</h1>
+          <h1 className="flex justify-center text-zinc-600 font-bold text-3xl mb-6">
+            SIGN UP
+          </h1>
           <div className="mb-4">
-            <h3 className="text-zinc-700 mb-2">Kimlik No:</h3>
+            <h3 className="text-zinc-700 mb-2">Identity No:</h3>
             <input
+              className="w-full p-1 bg-zinc-200 rounded-md"
               type="text"
-              placeholder="Kimlik Numarası"
+              placeholder="identity number"
               value={identityNo}
               onChange={(e) => setIdentityNo(e.target.value)}
             />
           </div>
-          <input
-            type="text"
-            placeholder="Ad"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="text"
-            placeholder="Soyad"
-            value={surname}
-            onChange={(e) => setSurname(e.target.value)}
-          />
-          <input
-            type="date"
-            placeholder="Doğum Tarihi"
-            value={birthDate}
-            onChange={(e) => setBirthDate(e.target.value)}
-          />
-          <input
-            type="password"
-            placeholder="Şifre"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            type="department"
-            placeholder="Departman"
-            value={department}
-            onChange={(e) => setDepartment(e.target.value)}
-          />
-          <button onClick={handleSignUp}>Kayıt Ol</button>
+          <div className="mb-4">
+            <h3 className="text-zinc-700 mb-2">Name:</h3>
+            <input
+              className="w-full p-1 bg-zinc-200 rounded-md"
+              type="text"
+              placeholder="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <h3 className="text-zinc-700 mb-2">Surname:</h3>
+            <input
+              className="w-full p-1 bg-zinc-200 rounded-md"
+              type="text"
+              placeholder="surname"
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <h3 className="text-zinc-700 mb-2">Birth Date:</h3>
+            <input
+              className="w-full p-1 bg-zinc-200 rounded-md"
+              type="date"
+              placeholder="birth date"
+              value={birthDate}
+              onChange={(e) => setBirthDate(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <h3 className="text-zinc-700 mb-2">Password:</h3>
+            <input
+              className="w-full p-1 bg-zinc-200 rounded-md"
+              type="password"
+              placeholder="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="mb-4">
+            <h3 className="text-zinc-700 mb-2">Department:</h3>
+            <input
+              className="w-full p-1 bg-zinc-200 rounded-md"
+              type="department"
+              placeholder="department"
+              value={department}
+              onChange={(e) => setDepartment(e.target.value)}
+            />
+          </div>
+          <button
+            className="mt-3 w-full text-white bg-zinc-500 p-2 rounded-md"
+            onClick={handleSignUp}
+          >
+            Kayıt Ol
+          </button>
           {error && <p style={{ color: "red" }}>{error}</p>}
+          <p className="mt-6">
+          Do you have an existing account? <a className="hover:text-zinc-500" href="/logIn">Log in</a>
+          </p>
         </div>
       </div>
     </div>

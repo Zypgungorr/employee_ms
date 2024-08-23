@@ -54,7 +54,7 @@ export default function RecordsPage() {
   };
   
   return (
-    <div className="">
+    <div className="bg-zinc-600 h-full">
       <Navbar />
       <div className="flex justify-center items-center">
         <div className="p-5 m-10 w-5/12 rounded-xl border-solid border-4 border-white bg-zinc-300">
