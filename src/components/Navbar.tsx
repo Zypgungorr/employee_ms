@@ -37,7 +37,8 @@ export default function Navbar() {
                <ul className="list-none m-0 p-0 flex justify-center">
                     <li className="mt-2 mr-20"> <Link href="/homepage" className='text-white decoration-black hover:text-zinc-400'>Homepage</Link></li>
                     <li className="mt-2 mr-20"><Link href="/add-record" className='text-white decoration-red hover:text-zinc-400'>Add record</Link></li>
-                    <li className="mt-2 mr-20"><Link href="/records" className='text-white decoration-black hover:text-zinc-400'>Records</Link></li>
+                    <li className="mt-2 mr-20"><Link href="/add-employee" className='text-white decoration-red hover:text-zinc-400'>Add employee</Link></li>
+                    {/* <li className="mt-2 mr-20"><Link href="/records" className='text-white decoration-black hover:text-zinc-400'>Records</Link></li> */}
                     <li><button onClick={handleSignOut} className="ml-auto bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700"> Sign Out </button></li>
                 </ul>
             </nav>
