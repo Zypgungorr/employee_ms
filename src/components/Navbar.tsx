@@ -23,6 +23,7 @@ export default function Navbar() {
             if (response.ok) {
               
                 localStorage.removeItem('token');
+                localStorage.removeItem('tokenExpireTime');
                 router.push('/logIn'); 
             } else {
                 console.error('Oturum kapatma işlemi başarısız.');

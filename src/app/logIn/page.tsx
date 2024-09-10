@@ -22,9 +22,12 @@ export default function LoginPage() {
         return;
       }
 
-      const { token } = data;
-      if (token) {
+      const { token, expiresIn } = data;
+      if (token && expiresIn) {
+        const expireAt = Date.now() + expiresIn * 1000; 
         localStorage.setItem("token", token);
+        localStorage.setItem("tokenExpireTime", expireAt.toString());
+
         router.push("/homepage");
       } else {
         setError("Token alınamadı, lütfen tekrar deneyin.");
